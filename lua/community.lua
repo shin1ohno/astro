@@ -10,5 +10,6 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.pack.haskell" },
   { import = "astrocommunity.git.octo-nvim" },
-  { import = "astrocommunity.motion.nvim-surround" }
+  { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
 }
