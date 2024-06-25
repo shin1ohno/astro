@@ -1,4 +1,11 @@
-vim.opt.conceallevel = 2
+require("telescope").load_extension "pomodori"
+
+vim.keymap.set(
+  "n",
+  "<leader>atf",
+  function() require("telescope").extensions.pomodori.timers() end,
+  { desc = "Manage Pomodori Timers" }
+)
 
 -- This will run last in the setup process and is a good place to configure
 -- things like custom filetypes. This just pure lua so anything that doesn't
