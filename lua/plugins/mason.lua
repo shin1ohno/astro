@@ -22,7 +22,6 @@ return {
         "hls",
         "jsonls",
         "rust_analyzer",
-        "tsserver",
         "yamlls",
         -- add more arguments for adding more language servers
       })
