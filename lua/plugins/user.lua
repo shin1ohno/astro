@@ -8,7 +8,9 @@ return {
     opts = {
       provider = "copilot",
       auto_suggest_provider = "copilot",
-
+      copilot = {
+        model = "claude-3.7-sonnet",
+      },
       behaviour = {
         auto_suggestions = true,
         auto_set_highlight_group = true,
@@ -27,6 +29,19 @@ return {
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       "zbirenbaum/copilot.lua", -- for providers='copilot'
+      {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        event = { "VeryLazy" },
+        branch = "main",
+        dependencies = {
+          { "zbirenbaum/copilot.lua" },
+          { "nvim-lua/plenary.nvim" },
+        },
+        opts = {
+          model = "claude-3.7-sonnet",
+          debug = true,
+        },
+      },
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
