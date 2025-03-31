@@ -11,6 +11,9 @@ return {
       copilot = {
         model = "claude-3.7-sonnet",
       },
+      claude = {
+        disable_tools = true,
+      },
       behaviour = {
         auto_suggestions = true,
         auto_set_highlight_group = true,
@@ -18,6 +21,7 @@ return {
         auto_apply_diff_after_generation = false,
         support_paste_from_clipboard = true,
         minimize_diff = true,
+        enable_claude_text_editor_mode = true,
       },
     },
     build = "make",
