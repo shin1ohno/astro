@@ -1,6 +1,10 @@
 ---@type LazySpec
 return {
   {
+    "ellisonleao/dotenv.nvim",
+    config = function() require("dotenv").setup {} end,
+  },
+  {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
