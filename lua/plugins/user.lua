@@ -6,9 +6,9 @@ return {
     lazy = false,
     version = false,
     opts = {
-      provider = "gemini",
+      provider = "copilot",
       auto_suggest_provider = "copilot",
-      cursor_applying_provider = "gemini",
+      cursor_applying_provider = "copilot",
       vendors = {
         groq = {
           __inherited_from = "openai",
@@ -28,19 +28,15 @@ return {
         api_key_name = "GEMINI_API_KEY",
         model = "gemini-2.5-pro-preview-03-25",
       },
-      vertex = {
-        model = "gemini-2.5-pro-preview-03-25",
-        endpoint = "https://us-central1-aiplatform.googleapis.com/v1/projects/kouzoh-p-sh1/locations/us-central1/publishers/google/models",
-      },
       behaviour = {
-        auto_suggestions = true,
+        auto_apply_diff_after_generation = false,
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
-        auto_apply_diff_after_generation = false,
-        enable_cursor_planning_mode = true,
-        support_paste_from_clipboard = true,
-        minimize_diff = true,
+        auto_suggestions = true,
         enable_claude_text_editor_mode = true,
+        enable_cursor_planning_mode = true,
+        minimize_diff = true,
+        support_paste_from_clipboard = true,
       },
     },
     build = "make",
@@ -62,7 +58,6 @@ return {
         },
         opts = {
           model = "claude-3.7-sonnet",
-          debug = true,
         },
       },
       {
