@@ -14,4 +14,6 @@ return {
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.editing-support.mcphub-nvim" },
+  { import = "astrocommunity.note-taking.zk-nvim" },
+  { import = "astrocommunity.colorscheme.nord-nvim" },
 }

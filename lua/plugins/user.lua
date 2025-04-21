@@ -1,10 +1,6 @@
 ---@type LazySpec
 return {
   {
-    "zk-org/zk-nvim",
-    config = function() require("zk").setup {} end,
-  },
-  {
     "ellisonleao/dotenv.nvim",
     config = function() require("dotenv").setup {} end,
   },

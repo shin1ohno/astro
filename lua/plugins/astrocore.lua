@@ -45,8 +45,12 @@ return {
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings
+        ["<Leader>z"] = {
+          desc = "zk",
+        },
+
         ["<Leader>a"] = {
-          desc = "Quick access",
+          desc = "Avante",
         },
 
         ["<Leader>at"] = {
