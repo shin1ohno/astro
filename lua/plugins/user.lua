@@ -33,7 +33,7 @@ return {
         model = "gemini-2.5-pro-preview-03-25",
       },
       openai = {
-        model = "gpt-4.1-2025-04-14",
+        model = "o3",
       },
       behaviour = {
         auto_apply_diff_after_generation = false,
