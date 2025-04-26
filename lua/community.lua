@@ -24,6 +24,5 @@ return {
   { import = "astrocommunity.recipes.picker-nvchad-theme" },
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
-  { import = "astrocommunity.terminal-integration.vim-tmux-navigator" },
   { import = "astrocommunity.terminal-integration.vim-tmux-yank" },
 }
