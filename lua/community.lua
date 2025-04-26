@@ -25,5 +25,4 @@ return {
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
   { import = "astrocommunity.terminal-integration.vim-tmux-navigator" },
   { import = "astrocommunity.terminal-integration.vim-tmux-yank" },
-  { import = "astrocommunity.terminal-integration.vim-tpipeline" },
 }
