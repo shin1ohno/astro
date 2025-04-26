@@ -12,6 +12,7 @@
   "astroui": { "branch": "main", "commit": "fded232ee0001c6bed9b654188e3dd4b0c58317c" },
   "avante.nvim": { "branch": "main", "commit": "eb1cd44731783024621beafe4e46204cbc9a4320" },
   "better-escape.nvim": { "branch": "master", "commit": "199dcc2643dec5d8dbdab4ec672cf405224dcb3b" },
+  "blink-cmp-tmux": { "branch": "main", "commit": "c988ab398d352195fff4d09c8351ef7cdb9f0340" },
   "blink.cmp": { "branch": "main", "commit": "cb5e346d9e0efa7a3eee7fd4da0b690c48d2a98e" },
   "blink.compat": { "branch": "main", "commit": "2ed6d9a28b07fa6f3bface818470605f8896408c" },
   "cmp-dap": { "branch": "master", "commit": "ea92773e84c0ad3288c3bc5e452ac91559669087" },
