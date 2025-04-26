@@ -63,25 +63,22 @@ return {
 
         ["<Leader>z"] = {
           desc = "zk",
-
-          n = {
-            ["<Leader>zn"] = {
-              function() require("zk").new { title = vim.fn.input "Title: " } end,
-              desc = "New zk note",
-            },
-            ["<Leader>zo"] = {
-              function() require("zk").notes { sort = { "modified" } } end,
-              desc = "Open zk notes",
-            },
-            ["<Leader>zt"] = {
-              function() require("zk").tags() end,
-              desc = "Open zk tags",
-            },
-            ["<Leader>zf"] = {
-              function() require("zk").notes { sort = { "modified" }, match = { vim.fn.input "Search: " } } end,
-              desc = "Search zk notes",
-            },
-          },
+        },
+        ["<Leader>zn"] = {
+          function() require("zk").new { title = vim.fn.input "Title: " } end,
+          desc = "New zk note",
+        },
+        ["<Leader>zo"] = {
+          function() require("zk").notes { sort = { "modified" } } end,
+          desc = "Open zk notes",
+        },
+        ["<Leader>zt"] = {
+          function() require("zk").tags() end,
+          desc = "Open zk tags",
+        },
+        ["<Leader>zf"] = {
+          function() require("zk").notes { sort = { "modified" }, match = { vim.fn.input "Search: " } } end,
+          desc = "Search zk notes",
         },
 
         ["<Leader>a"] = {
