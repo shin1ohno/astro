@@ -35,6 +35,13 @@ return {
       openai = {
         model = "o3",
       },
+      rag_service = {
+        enabled = true,
+        host_mount = os.getenv "HOME", -- Host mount path for the rag service
+        provider = "openai",
+        llm_model = "",
+        embed_model = "",
+      },
       behaviour = {
         auto_apply_diff_after_generation = false,
         auto_set_highlight_group = true,
