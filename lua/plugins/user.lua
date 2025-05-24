@@ -10,9 +10,9 @@ return {
     lazy = false,
     version = false,
     opts = {
-      provider = "copilot",
-      auto_suggest_provider = "copilot",
-      cursor_applying_provider = "copilot",
+      provider = "openai",
+      auto_suggest_provider = "openai",
+      cursor_applying_provider = "openai",
       vendors = {
         groq = {
           __inherited_from = "openai",
@@ -21,9 +21,12 @@ return {
           model = "meta-llama/llama-4-scout-17b-16e-instruct",
           max_completion_tokens = 1024,
         },
-      },
-      copilot = {
-        model = "claude-3.7-sonnet",
+        mer = {
+          __inherited_from = "openai",
+          endpoint = "https://litellm.mercari.in/v1",
+          model = "anthropic/claude-opus-4-20250514",
+          api_key_name = "LIGHTLLM_API_KEY",
+        },
       },
       claude = {
         disable_tools = true,
@@ -34,13 +37,6 @@ return {
       },
       openai = {
         model = "o3",
-      },
-      rag_service = {
-        enabled = true,
-        host_mount = os.getenv "HOME", -- Host mount path for the rag service
-        provider = "openai",
-        llm_model = "",
-        embed_model = "",
       },
       behaviour = {
         auto_apply_diff_after_generation = false,
