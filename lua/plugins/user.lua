@@ -10,9 +10,9 @@ return {
     lazy = false,
     version = false,
     opts = {
-      provider = "openai",
-      auto_suggest_provider = "openai",
-      cursor_applying_provider = "openai",
+      provider = "copilot",
+      auto_suggest_provider = "copilot",
+      cursor_applying_provider = "copilot",
       vendors = {
         groq = {
           __inherited_from = "openai",
@@ -37,6 +37,9 @@ return {
       },
       openai = {
         model = "o3",
+      },
+      copilot = {
+        model = "claude-sonnet-4",
       },
       behaviour = {
         auto_apply_diff_after_generation = false,
@@ -67,7 +70,7 @@ return {
           { "nvim-lua/plenary.nvim" },
         },
         opts = {
-          model = "claude-3.7-sonnet",
+          model = "claude-sonnet-4",
         },
       },
       {
