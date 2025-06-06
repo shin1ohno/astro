@@ -24,7 +24,7 @@ return {
         mer = {
           __inherited_from = "openai",
           endpoint = "https://litellm.mercari.in/v1",
-          model = "anthropic/claude-opus-4-20250514",
+          model = "anthropic/claude-sonnet-4-20250514",
           api_key_name = "LIGHTLLM_API_KEY",
         },
       },
