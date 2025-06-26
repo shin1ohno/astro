@@ -1,0 +1,16 @@
+# Claude Code
+.claude/
+
+# Neovim
+.netrwhist
+
+# macOS
+.DS_Store
+
+# Swap files
+*.swp
+*.swo
+*~
+
+# Session files
+Session.vim
