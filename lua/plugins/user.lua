@@ -10,22 +10,15 @@ return {
     lazy = false,
     version = false,
     opts = {
-      provider = "copilot",
+      provider = "mer",
       auto_suggest_provider = "copilot",
-      cursor_applying_provider = "copilot",
+      cursor_applying_provider = "mer",
       vendors = {
-        groq = {
-          __inherited_from = "openai",
-          api_key_name = "GROQ_API_KEY",
-          endpoint = "https://api.groq.com/openai/v1/",
-          model = "meta-llama/llama-4-scout-17b-16e-instruct",
-          max_completion_tokens = 1024,
-        },
         mer = {
           __inherited_from = "openai",
           endpoint = "https://litellm.mercari.in/v1",
           model = "anthropic/claude-sonnet-4-20250514",
-          api_key_name = "LIGHTLLM_API_KEY",
+          api_key_name = "ANTHROPIC_API_KEY",
         },
       },
       claude = {
@@ -45,7 +38,7 @@ return {
         auto_apply_diff_after_generation = false,
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
-        auto_suggestions = true,
+        auto_suggestions = false,
         enable_claude_text_editor_mode = true,
         enable_cursor_planning_mode = true,
         minimize_diff = true,
