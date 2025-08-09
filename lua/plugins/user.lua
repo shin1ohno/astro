@@ -5,92 +5,34 @@ return {
     config = function() require("dotenv").setup {} end,
   },
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    version = false,
+    "MeanderingProgrammer/render-markdown.nvim",
     opts = {
-      provider = "mer",
-      auto_suggest_provider = "copilot",
-      cursor_applying_provider = "mer",
-      vendors = {
-        mer = {
-          __inherited_from = "openai",
-          endpoint = "https://litellm.mercari.in/v1",
-          model = "anthropic/claude-sonnet-4-20250514",
-          api_key_name = "ANTHROPIC_API_KEY",
-        },
-      },
-      claude = {
-        disable_tools = true,
-      },
-      gemini = {
-        api_key_name = "GEMINI_API_KEY",
-        model = "gemini-2.5-pro-preview-03-25",
-      },
-      openai = {
-        model = "o3",
-      },
-      copilot = {
-        model = "claude-sonnet-4",
-      },
-      behaviour = {
-        auto_apply_diff_after_generation = false,
-        auto_set_highlight_group = true,
-        auto_set_keymaps = true,
-        auto_suggestions = false,
-        enable_claude_text_editor_mode = true,
-        enable_cursor_planning_mode = true,
-        minimize_diff = true,
-        support_paste_from_clipboard = true,
-      },
+      file_types = { "markdown" },
     },
-    build = "make",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
+    ft = { "markdown" },
+  },
+  {
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = true,
+    keys = {
+      { "<leader>a", nil, desc = "AI/Claude Code" },
+      { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+      { "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+      { "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
+      { "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+      { "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
+      { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+      { "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
       {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        event = { "VeryLazy" },
-        branch = "main",
-        dependencies = {
-          { "zbirenbaum/copilot.lua" },
-          { "nvim-lua/plenary.nvim" },
-        },
-        opts = {
-          model = "claude-sonnet-4",
-        },
+        "<leader>as",
+        "<cmd>ClaudeCodeTreeAdd<cr>",
+        desc = "Add file",
+        ft = { "NvimTree", "neo-tree", "oil", "minifiles" },
       },
-      {
-        -- support for image pasting
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-            -- required for Windows users
-            use_absolute_path = true,
-          },
-        },
-      },
-      {
-        -- Make sure to set this up properly if you have lazy=true
-        "MeanderingProgrammer/render-markdown.nvim",
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
-      },
+      -- Diff management
+      { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+      { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
     },
   },
 }
