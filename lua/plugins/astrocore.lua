@@ -81,9 +81,6 @@ return {
           desc = "Search zk notes",
         },
 
-        ["<Leader>a"] = {
-          desc = "Avante",
-        },
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
