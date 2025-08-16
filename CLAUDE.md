@@ -22,7 +22,7 @@ This is an AstroNvim v5+ based Neovim configuration using Lazy.nvim as the plugi
 │   ├── community.lua     # AstroCommunity plugin imports
 │   ├── polish.lua        # Final configuration adjustments
 │   └── plugins/         # Individual plugin configurations
-│       ├── user.lua      # Custom plugins (avante.nvim, dotenv.nvim)
+│       ├── user.lua      # Custom plugins (claudecode.nvim, dotenv.nvim)
 │       ├── obsidian.lua  # Obsidian note management
 │       ├── astro*.lua    # AstroNvim core components
 │       ├── mason.lua     # LSP server management
@@ -43,7 +43,7 @@ This is an AstroNvim v5+ based Neovim configuration using Lazy.nvim as the plugi
 - `:ConformInfo` - Show formatter information
 
 ### AI Integration
-The configuration includes multiple AI providers through avante.nvim:
+The configuration includes multiple AI providers through claudecode.nvim (formerly avante.nvim):
 - Copilot (default provider)
 - OpenAI (model: o3)
 - Claude (via Copilot, model: claude-sonnet-4)
@@ -74,8 +74,8 @@ The configuration includes multiple AI providers through avante.nvim:
 - Linux: `~/Obs`
 
 ### Build Requirements
-- avante.nvim requires `make` for building
-- Run `:Lazy build avante.nvim` if build fails
+- claudecode.nvim requires `make` for building
+- Run `:Lazy build claudecode.nvim` if build fails
 
 ## Development Workflow
 
@@ -94,3 +94,23 @@ The configuration uses:
 - Multiple language-specific packs from AstroCommunity
 
 Check `lua/plugins/mason.lua` and `lua/plugins/none-ls.lua` for specific tool configurations.
+
+## Claude Code Support
+
+### Using Serena for Large Codebase Analysis
+When dealing with large codebases that exceed context limits, use Serena (smart AI agent) for comprehensive analysis:
+- **When to use**: Multi-file analysis, codebase understanding, feature verification
+- **How to use**: Let Claude Code know you want to use Serena for analysis tasks
+- **Benefits**: Better context understanding across entire codebase
+
+### Using Gemini CLI for Large Context
+For massive context requirements, use the Gemini CLI with `@` syntax:
+- **File inclusion**: `gemini -p "@src/main.py Explain this file"`
+- **Directory analysis**: `gemini -p "@src/ Summarize the architecture"`  
+- **Web search**: `gemini -p "WebSearch: oauth 2.0 security best practices"`
+- **Feature verification**: `gemini -p "@src/ @lib/ Has dark mode been implemented?"`
+
+### Best Practices
+1. Use Serena for complex reasoning tasks and large codebase analysis
+2. Use Gemini CLI when context window limitations are encountered
+3. Both tools complement Claude Code's capabilities for comprehensive development workflow

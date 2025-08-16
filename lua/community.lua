@@ -10,7 +10,7 @@ return {
   { import = "astrocommunity.colorscheme.nord-nvim" },
   { import = "astrocommunity.completion.nvim-cmp" },
   { import = "astrocommunity.completion.blink-cmp-tmux" },
-  { import = "astrocommunity.completion.copilot-cmp" },
+  ---{ import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.editing-support.mcphub-nvim" },
   { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
