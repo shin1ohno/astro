@@ -151,8 +151,8 @@ return {
         os_settings = { -- OS-specific settings
           macos = {
             enable = true,
-            cmd_get = "im-select", -- Shell-command to get the current input source
-            cmd_set = "im-select %s", -- Shell-command to set the new input source (Use `%s` as a placeholder for the input source)
+            cmd_get = "macism", -- Shell-command to get the current input source
+            cmd_set = "macism %s", -- Shell-command to set the new input source (Use `%s` as a placeholder for the input source)
             normal_input = false, -- Name of the input source for Normalize (Set false to auto-detect)
             -- Examples:
             -- normal_input = 'com.apple.keylayout.ABC',
@@ -177,14 +177,14 @@ return {
             },
           },
           windows = {
-            enable = true,
+            enable = false,
             cmd_get = "im-select.exe",
             cmd_set = "im-select.exe %s",
             normal_input = false,
             lang_inputs = {},
           },
           linux = {
-            enable = true,
+            enable = false,
             cmd_get = "ibus engine",
             cmd_set = "ibus engine %s",
             normal_input = false,
