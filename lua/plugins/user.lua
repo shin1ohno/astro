@@ -3,14 +3,18 @@ return {
   {
     "xiyaowong/transparent.nvim",
     lazy = false,
-    opts = {
-      extra_groups = {
-        "NormalFloat",
-        "FloatBorder",
-        "NeoTreeNormal",
-        "NeoTreeNormalNC",
-      },
-    },
+    config = function()
+      require("transparent").setup {
+        extra_groups = {
+          "NormalFloat",
+          "FloatBorder",
+          "NeoTreeNormal",
+          "NeoTreeNormalNC",
+        },
+      }
+      -- Enable transparency by default
+      require("transparent").toggle(true)
+    end,
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
