@@ -1,6 +1,18 @@
 ---@type LazySpec
 return {
   {
+    "xiyaowong/transparent.nvim",
+    lazy = false,
+    opts = {
+      extra_groups = {
+        "NormalFloat",
+        "FloatBorder",
+        "NeoTreeNormal",
+        "NeoTreeNormalNC",
+      },
+    },
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = {
