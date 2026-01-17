@@ -1,6 +1,18 @@
 ---@type LazySpec
 return {
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
+      },
+    },
+  },
+  {
     "amekusa/auto-input-switch.nvim",
     config = function()
       require("auto-input-switch").setup {
