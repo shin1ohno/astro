@@ -20,6 +20,7 @@ return {
   { import = "astrocommunity.pack.haskell" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.recipes.picker-nvchad-theme" },
   { import = "astrocommunity.recipes.vscode-icons" },
