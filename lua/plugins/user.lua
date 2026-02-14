@@ -241,7 +241,7 @@ return {
       terminal = {
         split_width_percentage = 0.40,
       },
-      terminal_cmd = "~/.claude/local/claude --dangerously-skip-permissions",
+      terminal_cmd = "~/.local/bin/claude --dangerously-skip-permissions",
     },
     keys = {
       { "<leader>a", nil, desc = "AI/Claude Code" },
