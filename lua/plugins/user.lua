@@ -19,6 +19,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      sources = { "filesystem", "buffers", "git_status" },
       filesystem = {
         filtered_items = {
           visible = true,
