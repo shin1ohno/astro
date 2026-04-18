@@ -20,11 +20,13 @@ return {
     keys = {
       { "<leader>fR", "<cmd>Telescope roon search<cr>", desc = "Roon search" },
       { "<leader>nR", "<cmd>Neotree roon focus<cr>", desc = "Roon browser" },
+      { "<leader>mb", "<cmd>Neotree roon focus<cr>", desc = "Roon browser" },
       { "<leader>mp", "<cmd>RoonPlayPause<cr>", desc = "Roon play/pause" },
       { "<leader>mn", "<cmd>RoonNext<cr>", desc = "Roon next" },
-      { "<leader>mb", "<cmd>RoonPrevious<cr>", desc = "Roon previous" },
+      { "<leader>m,", "<cmd>RoonPrevious<cr>", desc = "Roon previous" },
       { "<leader>mx", "<cmd>RoonStop<cr>", desc = "Roon stop" },
-      { "<leader>ms", "<cmd>RoonStatus<cr>", desc = "Roon status card" },
+      { "<leader>ms", "<cmd>Telescope roon search<cr>", desc = "Roon search" },
+      { "<leader>mS", "<cmd>RoonStatus<cr>", desc = "Roon status card" },
     },
   },
   {
