@@ -1,9 +1,7 @@
 ---@type LazySpec
 return {
   {
-    dir = vim.fn.expand("~/ManagedProjects/roon-nvim"),
-    name = "roon-nvim",
-    dev = true,
+    "shin1ohno/roon-nvim",
     lazy = false,
     dependencies = {
       "rebelot/heirline.nvim",
