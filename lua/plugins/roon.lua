@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   {
-    "shin1ohno/roon-nvim",
+    "shin1ohno/roon.nvim",
     lazy = false,
     dependencies = {
       "rebelot/heirline.nvim",
@@ -15,7 +15,7 @@ return {
       },
     },
     config = function(_, opts)
-      require("roon-nvim").setup(opts)
+      require("roon").setup(opts)
       require("telescope").load_extension("roon")
     end,
     keys = {

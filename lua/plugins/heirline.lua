@@ -3,7 +3,7 @@ return {
   "rebelot/heirline.nvim",
   optional = true,
   opts = function(_, opts)
-    local ok, rh = pcall(require, "roon-nvim.heirline")
+    local ok, rh = pcall(require, "roon.heirline")
     if not ok then
       return opts
     end
