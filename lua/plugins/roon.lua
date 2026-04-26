@@ -35,6 +35,7 @@ return {
       { "<leader>mA", "<cmd>Telescope roon albums<cr>", desc = "Roon albums" },
       { "<leader>mt", "<cmd>Telescope roon tracks<cr>", desc = "Roon tracks" },
       { "<leader>mS", "<cmd>RoonStatus<cr>", desc = "Roon status card" },
+      { "<leader>mV", "<cmd>RoonStatuslineToggle<cr>", desc = "Roon statusline toggle" },
     },
   },
   {
