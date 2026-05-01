@@ -17,6 +17,12 @@ return {
     config = function(_, opts)
       require("roon").setup(opts)
       require("telescope").load_extension("roon")
+      -- roon.nvim's setup() auto-opens the pinned widget after a 500ms
+      -- defer. Close it once so the card stays hidden until the user
+      -- explicitly invokes :RoonStatus / <leader>mS.
+      vim.defer_fn(function()
+        require("roon.widget").close()
+      end, 600)
     end,
     keys = {
       { "<leader>fR", "<cmd>Telescope roon search<cr>", desc = "Roon search" },
