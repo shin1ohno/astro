@@ -30,7 +30,7 @@ return {
     },
     dashboard = {
       sections = {
-        { section = "terminal", cmd = "neofetch", height = 20, padding = 1 },
+        { section = "terminal", cmd = "fastfetch", height = 20, padding = 1 },
         { pane = 2, icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
         { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
         {
