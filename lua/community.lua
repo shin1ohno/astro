@@ -6,7 +6,12 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  { import = "astrocommunity.color.transparent-nvim" },
+  -- transparent-nvim: import disabled — consolidated into a single self-contained
+  -- spec in lua/plugins/user.lua. The pack and the user spec were a duplicate
+  -- (lazy merged them by URL and the user config silently shadowed the pack's
+  -- opts/config). The user spec re-adds the pack's <Leader>uT mapping + the
+  -- TransparentClear->heirline color-refresh autocmd, so nothing is lost.
+  -- { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme.nord-nvim" },
   { import = "astrocommunity.completion.nvim-cmp" },
   { import = "astrocommunity.completion.blink-cmp-tmux" },

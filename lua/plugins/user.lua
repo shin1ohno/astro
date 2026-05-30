@@ -1,20 +1,47 @@
 ---@type LazySpec
 return {
   {
+    -- transparent.nvim — single consolidated spec. Previously duplicated: this
+    -- block PLUS astrocommunity.color.transparent-nvim (now disabled in
+    -- community.lua). lazy.nvim merged the two by URL and this config silently
+    -- won, discarding the pack's opts/config. The astrocore dependency below
+    -- restores the pack's <Leader>uT mapping + TransparentClear->heirline
+    -- color-refresh autocmd, so dropping the import loses nothing.
     "xiyaowong/transparent.nvim",
     lazy = false,
-    config = function()
-      require("transparent").setup {
-        extra_groups = {
-          "NormalFloat",
-          "FloatBorder",
-          "NeoTreeNormal",
-          "NeoTreeNormalNC",
-        },
-      }
-      -- Enable transparency by default
-      require("transparent").toggle(true)
+    opts = {
+      -- Targeted groups (the pack used clear_prefix; we keep the prior targeted
+      -- behavior intentionally).
+      extra_groups = {
+        "NormalFloat",
+        "FloatBorder",
+        "NeoTreeNormal",
+        "NeoTreeNormalNC",
+      },
+    },
+    config = function(_, opts)
+      local transparent = require "transparent"
+      transparent.setup(opts)
+      transparent.toggle(true) -- enable transparency by default
     end,
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          opts.mappings.n["<Leader>uT"] = { "<Cmd>TransparentToggle<CR>", desc = "Toggle transparency" }
+          if vim.tbl_get(opts, "autocmds", "heirline_colors") then
+            table.insert(opts.autocmds.heirline_colors, {
+              event = "User",
+              pattern = "TransparentClear",
+              desc = "Refresh heirline colors",
+              callback = function()
+                if package.loaded["heirline"] then require("astroui.status.heirline").refresh_colors() end
+              end,
+            })
+          end
+        end,
+      },
+    },
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
