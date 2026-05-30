@@ -34,10 +34,15 @@ return {
       "RoonMute",
       "RoonUnmute",
       "RoonMuteToggle",
+      -- Statusline toggle is a roon.nvim command now; listing it here lets
+      -- `:RoonStatuslineToggle` load the plugin on demand from a cold start.
+      "RoonStatuslineToggle",
     },
     opts = {
       zone = "Qutest",
       card = {
+        -- Keep the pinned card hidden until :RoonStatus / <leader>mS.
+        auto_open = false,
         art = { enabled = true },
       },
     },
@@ -50,12 +55,6 @@ return {
       if package.loaded["telescope"] then
         require("telescope").load_extension("roon")
       end
-      -- roon.nvim's setup() auto-opens the pinned widget after a 500ms
-      -- defer. Close it once so the card stays hidden until the user
-      -- explicitly invokes :RoonStatus / <leader>mS.
-      vim.defer_fn(function()
-        require("roon.widget").close()
-      end, 600)
     end,
     keys = {
       { "<leader>fR", "<cmd>Telescope roon search<cr>", desc = "Roon search" },
