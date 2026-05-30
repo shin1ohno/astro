@@ -2,16 +2,6 @@
 return {
   {
     "shin1ohno/roon.nvim",
-    -- Fully lazy: load only on a Roon command or a Roon keymap. No
-    -- `dependencies` on telescope/neo-tree/heirline — those forced an eager
-    -- startup load. Their integrations are wired independently:
-    --   * neo-tree "roon" source — registered in the neo-tree spec below,
-    --     applied when neo-tree itself loads (:Neotree).
-    --   * telescope "roon" extension — auto-loaded by telescope on the first
-    --     `:Telescope roon …` (telescope.extensions metatable), as long as
-    --     roon.nvim is on the runtimepath (a Roon keymap loads it first).
-    --   * heirline now-playing component — injected by the heirline spec on
-    --     the `User LazyLoad roon.nvim` event (see heirline.lua).
     cmd = {
       "RoonPlay",
       "RoonPause",
@@ -34,24 +24,17 @@ return {
       "RoonMute",
       "RoonUnmute",
       "RoonMuteToggle",
-      -- Statusline toggle is a roon.nvim command now; listing it here lets
-      -- `:RoonStatuslineToggle` load the plugin on demand from a cold start.
       "RoonStatuslineToggle",
     },
     opts = {
       zone = "Qutest",
       card = {
-        -- Keep the pinned card hidden until :RoonStatus / <leader>mS.
         auto_open = false,
         art = { enabled = true },
       },
     },
     config = function(_, opts)
       require("roon").setup(opts)
-      -- Register the telescope extension only when telescope is already
-      -- loaded. Otherwise telescope auto-loads it on the first
-      -- `:Telescope roon …`, so a non-telescope Roon command (e.g.
-      -- :RoonPlay) does not drag telescope into the load.
       if package.loaded["telescope"] then
         require("telescope").load_extension("roon")
       end
@@ -73,8 +56,6 @@ return {
       { "<leader>mA", "<cmd>Telescope roon albums<cr>", desc = "Roon albums" },
       { "<leader>mt", "<cmd>Telescope roon tracks<cr>", desc = "Roon tracks" },
       { "<leader>mS", "<cmd>RoonStatus<cr>", desc = "Roon status card" },
-      -- RoonStatuslineToggle is defined by the heirline spec; this key loads
-      -- roon.nvim (its owner) and then runs the toggle.
       { "<leader>mV", "<cmd>RoonStatuslineToggle<cr>", desc = "Roon statusline toggle" },
     },
   },
