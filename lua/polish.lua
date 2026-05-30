@@ -1,4 +1,6 @@
-vim.cmd [[colorscheme nord]]
+-- Colorscheme is set via AstroUI opts (lua/plugins/astroui.lua: colorscheme = "nord"),
+-- which astrocore applies during startup. No redundant `colorscheme nord` here — that
+-- previously forced astrotheme (the AstroNvim default) to be sourced and then overridden.
 vim.cmd [[autocmd VimEnter * if exists(':Dotenv') | exe 'Dotenv ~/.env' | endif]]
 vim.opt.conceallevel = 1 --for obsidian
 
