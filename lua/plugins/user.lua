@@ -264,4 +264,10 @@ return {
       { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
     },
   },
+  -- Force neotest-haskell lazy: astrocommunity.pack.haskell declares it as a
+  -- neotest dependency carrying a `config` fn but no event/ft/cmd/keys trigger,
+  -- which makes lazy.nvim materialize it as a START (eager) plugin. lazy=true
+  -- with no trigger keeps it loading only as neotest's dependency (loaded on
+  -- demand when neotest runs), off the startup path.
+  { "mrcjkb/neotest-haskell", lazy = true },
 }

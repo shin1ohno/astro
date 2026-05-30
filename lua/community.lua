@@ -11,7 +11,11 @@ return {
   { import = "astrocommunity.completion.nvim-cmp" },
   { import = "astrocommunity.completion.blink-cmp-tmux" },
   ---{ import = "astrocommunity.completion.copilot-cmp" },
-  { import = "astrocommunity.editing-support.mcphub-nvim" },
+  -- mcphub-nvim: import disabled — upstream pack spec is malformed (a stray
+  -- positional CopilotChat block makes #spec==2, so lazy.nvim's list branch
+  -- discards the event/cmd triggers and mcphub loads eagerly at startup).
+  -- Replaced by a well-formed spec in lua/plugins/mcphub.lua.
+  -- { import = "astrocommunity.editing-support.mcphub-nvim" },
   { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.icon.mini-icons" },
